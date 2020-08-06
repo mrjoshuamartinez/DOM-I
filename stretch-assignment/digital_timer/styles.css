@@ -2,8 +2,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #000000;
+  color: dodgerblue;
 }
-
 .digit {
   display: inline-block;
   font-size: 80px;
@@ -11,4 +12,12 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.ctrlBtns {
+  display: flex;
+  flex-direction: column;
+}
+.ctrlBtns button {
+  background-color: dodgerblue;
 }
