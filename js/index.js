@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 St. Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -40,7 +40,6 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-
 // Beginning of MVP Tasks
 
 // Nav
@@ -82,7 +81,15 @@ aTagSignUp.style.color = 'green';
 
 // Heading
 let mainHeading = document.querySelector('h1');
-mainHeading.textContent = siteContent['cta']['h1'];
+let headingWords = siteContent['cta']['h1'].split(' ')
+let divNodes = [];
+headingWords.forEach(word => {
+  divNodes.push(document.createElement('div'))
+})
+divNodes.forEach((div, i) => {
+  div.textContent = headingWords[i]
+  mainHeading.appendChild(div)
+})
 
 // Button
 let mainButton = document.querySelector('button');
