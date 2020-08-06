@@ -135,7 +135,7 @@ contactHeader.textContent = siteContent.contact["contact-h4"];
 
 // P Tag
 let contactContent = document.querySelectorAll(".contact p");
-contactContent[0].textContent = siteContent.contact["address"];
+contactContent[0].innerHTML = "123 Way 456 St.<br>Somewhere, USA";
 contactContent[1].textContent = siteContent.contact["phone"];
 contactContent[2].textContent = siteContent.contact["email"];
 
