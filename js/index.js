@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 St. Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -40,3 +40,108 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+// Beginning of MVP Tasks
+
+// Nav
+let aTags = document.getElementsByTagName('a')
+
+aTags[0].textContent = siteContent.nav["nav-item-1"];
+aTags[1].textContent = siteContent.nav["nav-item-2"];
+aTags[2].textContent = siteContent.nav["nav-item-3"];
+aTags[3].textContent = siteContent.nav["nav-item-4"];
+aTags[4].textContent = siteContent.nav["nav-item-5"];
+aTags[5].textContent = siteContent.nav["nav-item-6"];
+
+// Color Nav Links Green
+Array.from(aTags).forEach((obj) => {
+  obj.style.color = 'green';
+});
+
+// Add two nav items
+
+let aTagHome = document.createElement('a');
+aTagHome.href = '#';
+aTagHome.textContent = 'Home';
+
+let newHome = document.querySelector('nav');
+newHome.prepend(aTagHome);
+aTagHome.style.color = 'green';
+
+let aTagSignUp = document.createElement('a');
+aTagSignUp.href = '#';
+aTagSignUp.textContent = 'Sign Up';
+
+let newSignUp = document.querySelector('nav');
+newSignUp.appendChild(aTagSignUp);
+aTagSignUp.style.color = 'green';
+
+//
+// Heading, Button, and Image
+//
+
+// Heading
+let mainHeading = document.querySelector('h1');
+let headingWords = siteContent['cta']['h1'].split(' ')
+let divNodes = [];
+headingWords.forEach(word => {
+  divNodes.push(document.createElement('div'))
+})
+divNodes.forEach((div, i) => {
+  div.textContent = headingWords[i]
+  mainHeading.appendChild(div)
+})
+
+// Button
+let mainButton = document.querySelector('button');
+mainButton.innerText = "Get Started";
+
+// Side Image
+let logo2 = document.querySelector("#cta-img");
+logo2.setAttribute('src', siteContent["cta"]["img-src"]);
+
+//
+// Main Content
+//
+
+const sectionHeaders = document.querySelectorAll(".main-content h4");
+sectionHeaders[0].textContent = siteContent["main-content"]["features-h4"]
+sectionHeaders[1].textContent = siteContent["main-content"]["about-h4"]
+sectionHeaders[2].textContent = siteContent["main-content"]["services-h4"]
+sectionHeaders[3].textContent = siteContent["main-content"]["product-h4"]
+sectionHeaders[4].textContent = siteContent["main-content"]["vision-h4"]
+
+const sectionContent = document.querySelectorAll(".main-content p");
+sectionContent[0].textContent = siteContent["main-content"]["features-content"];
+sectionContent[1].textContent = siteContent["main-content"]["about-content"];
+sectionContent[2].textContent = siteContent["main-content"]["services-content"];
+sectionContent[3].textContent = siteContent["main-content"]["product-content"];
+sectionContent[4].textContent = siteContent["main-content"]["vision-content"];
+
+//
+// Middle Image
+//
+
+let middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"];
+
+
+//
+//contact 
+//
+
+// H4 Tag
+let contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent.contact["contact-h4"];
+
+// P Tag
+let contactContent = document.querySelectorAll(".contact p");
+contactContent[0].innerHTML = "123 Way 456 St.<br>Somewhere, USA";
+contactContent[1].textContent = siteContent.contact["phone"];
+contactContent[2].textContent = siteContent.contact["email"];
+
+//
+//footer
+//
+
+let footer = document.querySelector("footer p");
+footer.textContent = siteContent.footer["copyright"]; 
